@@ -6,7 +6,7 @@ var app = express();
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
-server.listen(8080);
+server.listen(8080 || process.env.PORT);
 io.set('log level',1); //Lo pongo a nivel uno para evitar demasiados logs ajenos a la aplicación.
 
 app.configure(function(){
